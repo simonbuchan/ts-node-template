@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "ts-node src",
+    "build": "tsc",
+    "start-lib": "node lib",
+    "test": "jest -o",
+    "test-all": "jest",
+    "test-watch": "jest --watch",
+    "test-update-snapshot": "jest --updateSnapshot",
+    "coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.0",
+    "@types/jest": "^19.2.2",
+    "jest": "^19.0.2",
+    "ts-jest": "^19.0.8",
+    "ts-node": "^3.0.2",
+    "typescript": "~2.2.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "index\\.(js|ts|tsx)"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}
